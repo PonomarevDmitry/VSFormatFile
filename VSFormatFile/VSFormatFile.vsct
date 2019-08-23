@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="GuidVSFormatFilePkg">
+    <Groups>
+      <Group guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600" />
+
+      <Group guid="GuidVSFormatFileCmdSetFile" id="MenuGroupFile" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE"/>
+      </Group>
+
+      <Group guid="GuidVSFormatFileCmdSetFolder" id="MenuGroupFolder" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE"/>
+      </Group>
+
+      <Group guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600" />
+
+      <Group guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolution" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNNODE"/>
+      </Group>
+
+      <Group guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolutionFolder" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNFOLDER"/>
+      </Group>
+
+    </Groups>
+
+    <Buttons>
+
+      <Button guid="GuidVSFormatFileCmdSetCode" id="CmdIdVSFormatFileCode" priority="0x0500" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In This File</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetCode" id="CmdIdVSFormatFileOpenDocuments" priority="0x0510" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In Opened Documents</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetCode" id="CmdIdJSBeautifierOnSaveCode" priority="0x0520" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In This File</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetCode" id="CmdIdJSBeautifierOnSaveOpenDocuments" priority="0x0530" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In Opened Documents</ButtonText>
+        </Strings>
+      </Button>
+
+
+      <Button guid="GuidVSFormatFileCmdSetFile" id="CmdIdVSFormatFileFile" priority="0x0500" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetFile" id="MenuGroupFile" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In This File</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetFile" id="CmdIdJSBeautifierOnSaveFile" priority="0x0510" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetFile" id="MenuGroupFile" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In This File</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="GuidVSFormatFileCmdSetFolder" id="CmdIdVSFormatFileFolder" priority="0x0500" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetFolder" id="MenuGroupFolder" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In Folder(s)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetFolder" id="CmdIdJSBeautifierOnSaveFolder" priority="0x0510" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetFolder" id="MenuGroupFolder" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In Folder(s)</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="GuidVSFormatFileCmdSetProject" id="CmdIdVSFormatFileProject" priority="0x0500" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In Project(s)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetProject" id="CmdIdJSBeautifierOnSaveProject" priority="0x0510" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In Project(s)</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdVSFormatFileSolution" priority="0x0500" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolution" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In Solution</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdJSBeautifierOnSaveSolution" priority="0x0510" type="Button">
+
+        <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolution" />
+
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In Solution</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdVSFormatFileSolutionFolder" priority="0x0500" type="Button">
+        
+        <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolutionFolder" />
+        
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Format(VSFormatFile) In Solution Folder(s)</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdJSBeautifierOnSaveSolutionFolder" priority="0x0510" type="Button">
+        
+        <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolutionFolder" />
+        
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DefaultDisabled</CommandFlag>
+        <CommandFlag>DontCache</CommandFlag>
+
+        <Strings>
+          <ButtonText>Beautify JavaScript In Solution Folder(s)</ButtonText>
+        </Strings>
+      </Button>
+
+    </Buttons>
+
+  </Commands>
+
+  <CommandPlacements>
+
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EDITOR_ALL" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guid1" id="guid1sym1" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guid2" id="guid2sym1" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guid3" id="guid3sym1" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600">
+      <Parent guid="guidJson" id="guidJson_ContextMenu" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIPROJ" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_SLNPROJ" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_SLNITEM" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_PROJITEM" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIITEM" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_MISCFILESPROJ" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIFOLDER" />
+    </CommandPlacement>
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_XPROJ_MULTIPROJFLDR" />
+    </CommandPlacement>
+
+    <!--
+    <CommandPlacement guid="GuidVSFormatFileCmdSetProject" id="MenuGroupProject" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+    </CommandPlacement>
+    -->
+
+  </CommandPlacements>
+
+  <Symbols>
+    <GuidSymbol name="GuidVSFormatFilePkg" value="{253B8A4D-86E4-4F76-B754-17675F3AA32F}" />
+
+    <GuidSymbol name="GuidVSFormatFileOptions" value="{20B21087-C0C6-4D62-A51C-4AC472825712}" />
+
+    <GuidSymbol name="GuidVSFormatFileOutputWindowPane" value="{6837C8A8-B325-4F1B-8FC6-8108E0A648CE}" />
+
+    <GuidSymbol name="guid1" value="{64DA400E-B4AD-4D67-AA92-4B7ACB01ECD5}">
+      <IDSymbol name="guid1sym1" value="2" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guid2" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}">
+      <IDSymbol name="guid2sym1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guid3" value="{4C87B692-1202-46AA-B64C-EF01FAEC53DA}">
+      <IDSymbol name="guid3sym1" value="259" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidJson" value="{F718CA06-CF4F-4A0C-9106-E79E9EE5E7CD}">
+      <IDSymbol name="guidJson_ContextMenu" value="3" />
+    </GuidSymbol>
+
+    <GuidSymbol name="GuidVSFormatFileCmdSetCode" value="{639E6837-1C8F-4261-B50E-F2D7AD6DCA5B}">
+      <IDSymbol name="MenuGroupCode" value="0x1020" />
+
+      <IDSymbol name="CmdIdVSFormatFileCode" value="0x0100" />
+      <IDSymbol name="CmdIdVSFormatFileOpenDocuments" value="0x0101" />
+
+      <IDSymbol name="CmdIdJSBeautifierOnSaveCode" value="0x0102" />
+      <IDSymbol name="CmdIdJSBeautifierOnSaveOpenDocuments" value="0x0103" />
+    </GuidSymbol>
+
+    <GuidSymbol name="GuidVSFormatFileCmdSetFile" value="{D0852DDF-B3B7-48C7-AED0-3BBBB776DC0F}">
+      <IDSymbol name="MenuGroupFile" value="0x1020" />
+
+      <IDSymbol name="CmdIdVSFormatFileFile" value="0x0101" />
+
+      <IDSymbol name="CmdIdJSBeautifierOnSaveFile" value="0x0102" />
+    </GuidSymbol>
+
+    <GuidSymbol name="GuidVSFormatFileCmdSetFolder" value="{15C4338E-CF6F-4E42-8DE9-CD676682D53D}">
+      <IDSymbol name="MenuGroupFolder" value="0x1020" />
+
+      <IDSymbol name="CmdIdVSFormatFileFolder" value="0x0102" />
+
+      <IDSymbol name="CmdIdJSBeautifierOnSaveFolder" value="0x0103" />
+    </GuidSymbol>
+
+    <GuidSymbol name="GuidVSFormatFileCmdSetProject" value="{AA39165F-5DCD-4707-BE3B-05E3A554CF9D}">
+      <IDSymbol name="MenuGroupProject" value="0x1020" />
+
+      <IDSymbol name="CmdIdVSFormatFileProject" value="0x0103" />
+
+      <IDSymbol name="CmdIdJSBeautifierOnSaveProject" value="0x0104" />
+    </GuidSymbol>
+
+    <GuidSymbol name="GuidVSFormatFileCmdSetSolution" value="{CDC5A349-66BF-4541-AB4C-B540A8D72907}">
+      <IDSymbol name="MenuGroupSolution" value="0x1020" />
+      <IDSymbol name="MenuGroupSolutionFolder" value="0x1021" />
+
+      <IDSymbol name="CmdIdVSFormatFileSolution" value="0x0104" />
+      <IDSymbol name="CmdIdVSFormatFileSolutionFolder" value="0x0105" />
+
+      <IDSymbol name="CmdIdJSBeautifierOnSaveSolution" value="0x0106" />
+      <IDSymbol name="CmdIdJSBeautifierOnSaveSolutionFolder" value="0x0107" />
+    </GuidSymbol>
+
+  </Symbols>
+
+</CommandTable>

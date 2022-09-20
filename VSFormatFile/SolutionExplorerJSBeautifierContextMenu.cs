@@ -16,7 +16,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
 
             var mcs = _package.MenuCommandService;
 
-            var menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.CmdIdJSBeautifierOnSaveCode);
+            var menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.GuidVSFormatFileCmdSetCode.CmdIdJSBeautifierOnSaveCode);
             var menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -24,7 +24,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.CmdIdJSBeautifierOnSaveOpenDocuments);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.GuidVSFormatFileCmdSetCode.CmdIdJSBeautifierOnSaveOpenDocuments);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveOpenedDocumentsEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -33,7 +33,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             menuItem.BeforeQueryStatus += oleMenuItemDocuments_BeforeQueryStatus;
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFile, PackageIds.CmdIdJSBeautifierOnSaveFile);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFile, PackageIds.GuidVSFormatFileCmdSetFile.CmdIdJSBeautifierOnSaveFile);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -41,7 +41,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFolder, PackageIds.CmdIdJSBeautifierOnSaveFolder);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFolder, PackageIds.GuidVSFormatFileCmdSetFolder.CmdIdJSBeautifierOnSaveFolder);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -49,7 +49,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetProject, PackageIds.CmdIdJSBeautifierOnSaveProject);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetProject, PackageIds.GuidVSFormatFileCmdSetProject.CmdIdJSBeautifierOnSaveProject);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -57,7 +57,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.CmdIdJSBeautifierOnSaveSolution);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.GuidVSFormatFileCmdSetSolution.CmdIdJSBeautifierOnSaveSolution);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -65,7 +65,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.CmdIdJSBeautifierOnSaveSolutionFolder);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.GuidVSFormatFileCmdSetSolution.CmdIdJSBeautifierOnSaveSolutionFolder);
             menuItem = new OleMenuCommand(JSBeautifierOnSaveEventHandler, menuCommandId)
             {
                 Visible = true,

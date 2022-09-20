@@ -16,7 +16,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
 
             var mcs = _package.MenuCommandService;
 
-            var menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.CmdIdVSFormatFileCode);
+            var menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.GuidVSFormatFileCmdSetCode.CmdIdVSFormatFileCode);
             var menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -24,7 +24,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.CmdIdVSFormatFileOpenDocuments);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetCode, PackageIds.GuidVSFormatFileCmdSetCode.CmdIdVSFormatFileOpenDocuments);
             menuItem = new OleMenuCommand(VSFormatFileOpenedDocumentsEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -33,7 +33,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             menuItem.BeforeQueryStatus += oleMenuItemDocuments_BeforeQueryStatus;
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFile, PackageIds.CmdIdVSFormatFileFile);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFile, PackageIds.GuidVSFormatFileCmdSetFile.CmdIdVSFormatFileFile);
             menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -41,7 +41,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFolder, PackageIds.CmdIdVSFormatFileFolder);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetFolder, PackageIds.GuidVSFormatFileCmdSetFolder.CmdIdVSFormatFileFolder);
             menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -49,7 +49,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetProject, PackageIds.CmdIdVSFormatFileProject);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetProject, PackageIds.GuidVSFormatFileCmdSetProject.CmdIdVSFormatFileProject);
             menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -57,7 +57,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.CmdIdVSFormatFileSolution);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.GuidVSFormatFileCmdSetSolution.CmdIdVSFormatFileSolution);
             menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,
@@ -65,7 +65,7 @@ namespace Nav.Common.VSPackages.VSFormatFile
             };
             mcs.AddCommand(menuItem);
 
-            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.CmdIdVSFormatFileSolutionFolder);
+            menuCommandId = new CommandID(PackageGuids.GuidVSFormatFileCmdSetSolution, PackageIds.GuidVSFormatFileCmdSetSolution.CmdIdVSFormatFileSolutionFolder);
             menuItem = new OleMenuCommand(VSFormatFileEventHandler, menuCommandId)
             {
                 Visible = true,

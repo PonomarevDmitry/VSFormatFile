@@ -458,8 +458,8 @@ namespace Nav.Common.VSPackages.VSFormatFile
 
                 using (var undo = history?.CreateTransaction("JSBeautify"))
                 {
-                    vsTextView.GetCaretPos(out var oldCaretLine, out var oldCaretColumn);
-                    vsTextView.SetCaretPos(oldCaretLine, 0);
+                    var res = vsTextView.GetCaretPos(out var oldCaretLine, out var oldCaretColumn);
+                    res = vsTextView.SetCaretPos(oldCaretLine, 0);
 
                     var snapshot = wpfTextView.TextSnapshot;
 
@@ -490,8 +490,8 @@ namespace Nav.Common.VSPackages.VSFormatFile
                         edit.Apply();
                     }
 
-                    vsTextView.GetCaretPos(out var newCaretLine, out var newCaretColumn);
-                    vsTextView.SetCaretPos(newCaretLine, oldCaretColumn);
+                    res = vsTextView.GetCaretPos(out var newCaretLine, out var newCaretColumn);
+                    res = vsTextView.SetCaretPos(newCaretLine, oldCaretColumn);
 
                     undo?.Complete();
                 }

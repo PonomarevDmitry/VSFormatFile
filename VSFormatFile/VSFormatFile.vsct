@@ -7,9 +7,9 @@
 
   <Commands package="GuidVSFormatFilePkg">
     <Groups>
-      <Group guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x0600" />
+      <Group guid="GuidVSFormatFileCmdSetCode" id="MenuGroupCode" priority="0x06000" />
 
-      <Group guid="GuidVSFormatFileCmdSetFile" id="MenuGroupFile" priority="0x0600">
+      <Group guid="GuidVSFormatFileCmdSetFile" id="MenuGroupFile" priority="0x06000">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE"/>
       </Group>
 
@@ -194,9 +194,9 @@
       </Button>
 
       <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdVSFormatFileSolutionFolder" priority="0x0500" type="Button">
-        
+
         <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolutionFolder" />
-        
+
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DefaultDisabled</CommandFlag>
@@ -207,9 +207,9 @@
         </Strings>
       </Button>
       <Button guid="GuidVSFormatFileCmdSetSolution" id="CmdIdJSBeautifierOnSaveSolutionFolder" priority="0x0510" type="Button">
-        
+
         <Parent guid="GuidVSFormatFileCmdSetSolution" id="MenuGroupSolutionFolder" />
-        
+
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DefaultDisabled</CommandFlag>

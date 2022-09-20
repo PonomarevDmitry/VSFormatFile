@@ -5,7 +5,7 @@
     using System.Globalization;
     using System.Linq;
     using System.Text.RegularExpressions;
-    
+
     public class Beautifier
     {
         public Beautifier()
@@ -90,7 +90,7 @@
             Wordchar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_$";
             Digits = "0123456789";
             Punct = "+ - * / % & ++ -- = += -= *= /= %= == === != !== > < >= <= >> << >>> >>>= >>= <<= && &= | || ! !! , : ? ^ ^= |= :: <?= <? ?> <%= <% %>".Split(' ');
-            
+
             // Words which always should start on a new line
             LineStarters = "continue,try,throw,return,var,if,switch,case,default,for,while,break,function".Split(',');
             SetMode("BLOCK");
@@ -100,7 +100,7 @@
         private void SetMode(string mode)
         {
             var prev = new BeautifierFlags("BLOCK");
-            
+
             if (Flags != null)
             {
                 FlagStore.Add(Flags);
@@ -156,7 +156,7 @@
                 }
 
                 var handlers = new Dictionary<string, Action<string>> {
-                    { "TK_START_EXPR", HandleStartExpr }, 
+                    { "TK_START_EXPR", HandleStartExpr },
                     { "TK_END_EXPR", HandleEndExpr },
                     { "TK_START_BLOCK", HandleStartBlock },
                     { "TK_END_BLOCK", HandleEndBlock },
@@ -188,7 +188,7 @@
             var sweetCode = PreindentString + regex.Replace(string.Concat(Output), "", 1);
             return sweetCode;
         }
-        
+
         private void TrimOutput(bool eatNewlines = false)
         {
             while (Output.Count != 0 &&
@@ -258,7 +258,7 @@
                 WantedNewline = false;
             }
         }
-        
+
         private void AppendNewline(bool ignoreRepeated = true, bool resetStatementFlags = true)
         {
             if (Opts.KeepArrayIndentation && IsArray(Flags.Mode))
@@ -303,7 +303,7 @@
 
         private void AppendIndentString()
         {
-            if (LastText != "")
+            if (!string.IsNullOrEmpty(LastText))
             {
                 Output.Add(IndentString);
             }
@@ -354,7 +354,7 @@
         private void RestoreMode()
         {
             DoBlockJustClosed = Flags.Mode == "DO_BLOCK";
-            
+
             if (FlagStore.Count > 0)
             {
                 var mode = Flags.Mode;
@@ -449,7 +449,7 @@
                         JustAddedNewline = true;
                     }
                 }
-                
+
                 WantedNewline = NNewlines > 0;
             }
 
@@ -460,7 +460,7 @@
                 if (ParserPos < Input.Length)
                 {
                     cc = c.ToString();
-                    
+
                     while (Wordchar.Contains(Input[ParserPos]))
                     {
                         cc += Input[ParserPos];
@@ -469,7 +469,7 @@
                             break;
                     }
                 }
-                
+
                 // small and surprisingly unugly hack for 1E-10 representation
                 if (ParserPos != Input.Length && "+-".Contains(Input[ParserPos]) && Regex.IsMatch(cc, "^[0-9]+[Ee]$"))
                 {
@@ -537,7 +537,7 @@
                         {
                             c = Input[ParserPos];
                             comment += c;
-                            
+
                             if ("\r\n".Contains(c))
                             {
                                 inlineComment = false;
@@ -553,12 +553,12 @@
                     }
 
                     ParserPos += 2;
-                    
+
                     if (inlineComment && NNewlines == 0)
                     {
                         return new Tuple<string, string>("/*" + comment + "*/", "TK_INLINE_COMMENT");
                     }
-                    
+
                     return new Tuple<string, string>("/*" + comment + "*/", "TK_BLOCK_COMMENT");
                 }
 
@@ -569,7 +569,7 @@
                     {
                         comment += Input[ParserPos];
                         ParserPos += 1;
-                        
+
                         if (ParserPos >= Input.Length)
                         {
                             break;
@@ -580,7 +580,7 @@
                     {
                         AppendNewline();
                     }
-                    
+
                     return new Tuple<string, string>(comment, "TK_COMMENT");
                 }
             }
@@ -596,7 +596,7 @@
                 var esc1 = 0;
                 var esc2 = 0;
                 var resultingString = c.ToString();
-                
+
                 if (ParserPos < Input.Length)
                 {
                     if (sep == '/')
@@ -622,7 +622,7 @@
                             {
                                 esc = false;
                             }
-                            
+
                             ParserPos += 1;
                             if (ParserPos >= Input.Length)
                             {
@@ -646,12 +646,12 @@
                                 {
                                     // FIXME
                                     resultingString = new string(resultingString.Take(2 + esc2).ToArray());
-                                    
-                                    if ((char) esc1 == sep || (char) esc1 == '\\')
+
+                                    if ((char)esc1 == sep || (char)esc1 == '\\')
                                     {
                                         resultingString += '\\';
                                     }
-                                    
+
                                     resultingString += (char)esc1;
                                 }
                                 esc1 = 0;
@@ -683,7 +683,7 @@
                                     }
                                 }*/
                             }
-                            
+
                             ParserPos += 1;
                             if (ParserPos >= Input.Length)
                             {
@@ -789,7 +789,7 @@
                 {
                     AppendNewline();
                 }
-                
+
                 return new Tuple<string, string>("-->", "TK_COMMENT");
             }
 
@@ -828,7 +828,7 @@
             return new Tuple<string, string>(c.ToString(), "TK_UNKNOWN");
         }
 
-        private void HandleStartExpr(string  tokenText)
+        private void HandleStartExpr(string tokenText)
         {
             if (tokenText == "[")
             {
@@ -946,7 +946,7 @@
                     AllowWrapOrPreservedNewline(tokenText);
                 }
             }
-            
+
             Append(tokenText);
         }
 
@@ -994,7 +994,7 @@
             {
                 if (LastType != "TK_OPERATOR")
                 {
-                    if (LastType == "TK_EQUALS" || 
+                    if (LastType == "TK_EQUALS" ||
                         (IsSpecialWord(LastText) && LastText != "else"))
                     {
                         Append(" ");
@@ -1152,7 +1152,7 @@
                 {
                     AppendNewline();
                 }
-                
+
                 Append("function");
                 LastWord = "function";
                 return;
@@ -1352,8 +1352,8 @@
             {
                 Append(" ");
             }
-            else if (LastType == "TK_COMMA" || 
-                     LastType == "TK_START_EXPR" || 
+            else if (LastType == "TK_COMMA" ||
+                     LastType == "TK_START_EXPR" ||
                      LastType == "TK_EQUALS" ||
                      LastType == "TK_OPERATOR")
             {
@@ -1541,7 +1541,7 @@
             var lines = tokenText.Replace("\r", "").Split('\n');
             // all lines start with an asterisk? that's a proper box comment
 
-            if (lines.Skip(1).Where(x => x.Trim() == "" || x.TrimStart()[0] != '*').All(string.IsNullOrEmpty))
+            if (lines.Skip(1).Where(x => string.IsNullOrEmpty(x.Trim()) || x.TrimStart()[0] != '*').All(string.IsNullOrEmpty))
             {
                 AppendNewline();
                 Append(lines[0]);
@@ -1613,7 +1613,7 @@
             {
                 AllowWrapOrPreservedNewline(tokenText, LastText == ")" && Opts.BreakChainedMethods);
             }
-            
+
             Append(tokenText);
         }
 
